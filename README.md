@@ -36,6 +36,10 @@ You'll also need a config file called ".mail.yaml" which configures an outgoing 
     mailuser: YOUR_GMAIL_ADDRESS
     mailpass: YOUR_GMAIL_PASSWORD
 
+# ENVIRONMENT VARIABLES
+
+If you want to send a message to a slack channel from the "freeLearning" command, you need to set SLACK_TOKEN (this will be an xoxb-... style token) and SLACK_CHANNEL (an 8 character alphanumeric channel id).
+
 # IMPORTANT
 
 This script looks in "BOOK_DIR" as set in the config file to see if you already have a book downloaded. It does this by looking for a file that starts with the 11 digit productId and ends with the extension. Depending on how you name your book files, you may need to tweak the function "func FillBookFiles()" in locations.go for your use case.

@@ -9,7 +9,14 @@ import (
 
 func PostToSlack(text slack.MsgOption, attachment slack.Attachment) {
 	channelID := os.Getenv("SLACK_CHANNEL")
-	api := slack.New(os.Getenv("SLACK_TOKEN"))
+	token := os.Getenv("SLACK_TOKEN")
+
+	if channelID == "" || token == "" {
+		glog.V(0).Infof("Please set environment variables SLACK_TOKEN and SLACK_CHANNEL to send a slack message.")
+		return
+	}
+
+	api := slack.New(token)
 
 	_, _, err := api.PostMessage(
 		channelID,
