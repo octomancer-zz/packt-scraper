@@ -62,7 +62,7 @@ The first thing you'll need to do is download the JSON for the books you've clai
 
 To get the daily free offer and send an email about it:
 
-`$ packt-scraper freeLearning
+`$ packt-scraper freeLearning`
 
 To see a list of already-downloaded books the script has been able to recognise:
 
